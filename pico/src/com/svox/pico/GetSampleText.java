@@ -37,6 +37,13 @@ public class GetSampleText extends Activity {
         Intent returnData = new Intent();
 
         Intent i = getIntent();
+        /* SPRD: bug 462542 intentfuzz-activity,pico tts crash @{ */
+        if (null == i.getExtras()) {
+            setResult(result, returnData);
+            finish();
+            return;
+        }
+        /* @} */
         String language = i.getExtras().getString("language");
         String country = i.getExtras().getString("country");
         String variant = i.getExtras().getString("variant");

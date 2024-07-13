@@ -12,6 +12,7 @@ LOCAL_SRC_FILES := \
 
 LOCAL_JNI_SHARED_LIBRARIES := libttscompat libttspico
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
+LOCAL_MULTILIB := 32
 
 include $(BUILD_PACKAGE)
 
